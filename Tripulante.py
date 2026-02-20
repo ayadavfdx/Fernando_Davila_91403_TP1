@@ -6,13 +6,22 @@ from colorama import init
 init()
 
 #Define Class
-class Tripulantes():
+class Tripulante():
     def __init__(self,name,role,bounty,power,energy):
-        self.__name=name
-        self.__role=role
-        self.__bounty=bounty
-        self.__power=power
-        self.__energy=energy
+        self.__name=str(name)
+        self.__role=str(role)
+        self.__bounty=float(bounty)
+        self.__power=int(power)
+        self.__energy=int(energy)
+
+    def give_info(self):
+        print(f"""
+              |Name:   {self.__name}
+              |Role:   {self.__role}
+              |Bounty: {self.__bounty}
+              |Power:  {self.__power}
+              |Energy: {self.energy}  """)
+
 
     #Use getters and setters
     @property
@@ -34,3 +43,6 @@ class Tripulantes():
     @property
     def energy(self):
         return self.__energy
+    
+p1= Tripulante("Zoro","Swordsman","354","1000","50")
+p1.give_info()
