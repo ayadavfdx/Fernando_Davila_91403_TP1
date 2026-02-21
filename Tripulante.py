@@ -1,9 +1,10 @@
-#Import library "Colorama"
+#Import library "Colorama and Random"
+from random import choice
 from colorama import Style
 from colorama import Fore
 from colorama import init
 #Initialize Colorama
-init()
+init(autoreset=True)
 
 #Define Class
 class Tripulante():
@@ -53,8 +54,16 @@ class Tripulante():
     def energy(self,value):
         self.__energy= self.__validate_range(value)
 
+    #String to show in console
     def __str__(self):
-        return (f"«{self.__name} [{self.__role}] -Bounty:{self.__bounty} |Power: {self.power} |Energy: {self.energy}» ")
+        return (f"{self.random_colors()}«{self.__name} [{self.__role}] -Bounty:{self.__bounty} M {Style.RESET_ALL}|Power: {self.power} |Energy: {self.energy} »{Style.RESET_ALL} ")
 
-p1= Tripulante("Zoro","Janitor",350,300,300)
+    #Function to choose random colors
+    def random_colors(self):
+        colors=[Fore.CYAN, Fore.LIGHTBLUE_EX, Fore.GREEN, Fore.YELLOW, Fore.MAGENTA]
+        return choice(colors)
+    
+p1= Tripulante("Zoro","Janitor",350,100,100)
+p2= Tripulante("Lufi","Pirate",900,100,100)
 print(p1)
+print(p2)
