@@ -57,7 +57,7 @@ class Tripulante():
     #Function to read the state of the energy and change color
     @property
     def energy_color(self):
-        if 0< self.__energy <=20:
+        if 0<= self.__energy <=20:
             return (f"{Fore.RED} {self.__energy} {Style.RESET_ALL}")
         elif  20< self.__energy <=50:
             return (f"{Fore.YELLOW} {self.__energy} {Style.RESET_ALL}")
@@ -73,9 +73,14 @@ class Tripulante():
         colors=[Fore.CYAN, Fore.LIGHTBLUE_EX, Fore.MAGENTA, Fore.BLUE,Fore.LIGHTMAGENTA_EX,Fore.LIGHTBLUE_EX]
         return choice(colors)
     
+    #Methods
+    def work(self,time):
+        self.energy -= time*5
 
 
-p1= Tripulante("Zoro","Janitor",350,100,20)
-p2= Tripulante("Lufi","Pirate",900,100,80)
+p1= Tripulante("Zoro","Janitor",350,100,30)
+p1.work(4)
 print(p1)
+p2= Tripulante("Lufi","Pirate",900,100,80)
+p2.work(3)
 print(p2)
