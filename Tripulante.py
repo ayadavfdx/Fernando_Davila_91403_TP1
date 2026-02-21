@@ -12,16 +12,17 @@ class Tripulante():
         self.__role=str(role)
         self.__bounty=float(bounty)
         self.power=int(power)
-        self.__energy=int(energy)
+        self.energy=int(energy)
 
     #Function to validate range to 0-100
     def __validate_range(self,value):
         if value <0 or value > 100:
-            print(Fore.RED + "must be a value between 0-100".upper() + Style.RESET_ALL)
-        else:
+            raise ValueError(Fore.BLUE + "Must be a value between (0-100) try again!".upper() + Style.RESET_ALL)
+        else:    
             return value
-        
+    
     #Use getters, make private attributes
+
     @property
     def name(self):
         return self.__name
@@ -52,3 +53,8 @@ class Tripulante():
     def energy(self,value):
         self.__energy= self.__validate_range(value)
 
+    def __str__(self):
+        return (f"«{self.__name} [{self.__role}] -Bounty:{self.__bounty} |Power: {self.power} |Energy: {self.energy}» ")
+
+p1= Tripulante("Zoro","Janitor",350,300,300)
+print(p1)
