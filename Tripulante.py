@@ -1,10 +1,15 @@
-#Import library "Colorama and Random"
+#Import library "Colorama Random Os"
 from random import choice
 from colorama import Style
 from colorama import Fore
 from colorama import init
+from os import system
+
 #Initialize Colorama
 init(autoreset=True)
+#Function to clean console
+def clean_console():
+    system("cls")
 
 #Define Class
 class Tripulante():
@@ -77,10 +82,16 @@ class Tripulante():
     def work(self,time):
         self.energy -= time*5
 
+    def rest(self):
+        self.energy= 100
 
-p1= Tripulante("Zoro","Janitor",350,100,30)
-p1.work(4)
+
+p1= Tripulante("Zoro","Janitor",350,100,25)
+p1.work(5)
 print(p1)
-p2= Tripulante("Lufi","Pirate",900,100,80)
-p2.work(3)
-print(p2)
+
+p1.rest()
+print(p1)
+#p2= Tripulante("Lufi","Pirate",900,100,80)
+#p2.work(3)
+#print(p2)
