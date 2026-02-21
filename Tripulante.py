@@ -54,16 +54,28 @@ class Tripulante():
     def energy(self,value):
         self.__energy= self.__validate_range(value)
 
+    #Function to read the state of the energy and change color
+    @property
+    def energy_color(self):
+        if 0< self.__energy <=20:
+            return (f"{Fore.RED} {self.__energy} {Style.RESET_ALL}")
+        elif  20< self.__energy <=50:
+            return (f"{Fore.YELLOW} {self.__energy} {Style.RESET_ALL}")
+        else:
+            return (f"{Fore.GREEN} {self.__energy} {Style.RESET_ALL}")
+    
     #String to show in console
     def __str__(self):
-        return (f"{self.random_colors()}«{self.__name} [{self.__role}] -Bounty:{self.__bounty} M {Style.RESET_ALL}|Power: {self.power} |Energy: {self.energy} »{Style.RESET_ALL} ")
+        return (f"{self.random_colors()}«{self.__name} [{self.__role}]{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}-Bounty:{Style.RESET_ALL}{self.random_colors()}{self.__bounty} M {Fore.LIGHTWHITE_EX}|Power: {Style.RESET_ALL}{self.random_colors()}{self.power} {Style.RESET_ALL}{Fore.LIGHTWHITE_EX}|Energy:{Style.RESET_ALL}{self.energy_color}  » ")
 
     #Function to choose random colors
     def random_colors(self):
-        colors=[Fore.CYAN, Fore.LIGHTBLUE_EX, Fore.GREEN, Fore.YELLOW, Fore.MAGENTA]
+        colors=[Fore.CYAN, Fore.LIGHTBLUE_EX, Fore.MAGENTA, Fore.BLUE,Fore.LIGHTMAGENTA_EX,Fore.LIGHTBLUE_EX]
         return choice(colors)
     
-p1= Tripulante("Zoro","Janitor",350,100,100)
-p2= Tripulante("Lufi","Pirate",900,100,100)
+
+
+p1= Tripulante("Zoro","Janitor",350,100,20)
+p2= Tripulante("Lufi","Pirate",900,100,80)
 print(p1)
 print(p2)
