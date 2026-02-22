@@ -17,7 +17,7 @@ def title(title):
     print(f"{Fore.LIGHTGREEN_EX}-----{title}-----")
 
 def space():
-    print ("\n"*20)
+    print ("\n"*5)
 #TESTING
 
 #Test create a crew member
@@ -38,5 +38,13 @@ p3.work(20)
 print(p1)
 print(p2)
 print(p3)
+space()
 
 #Test Rest
+title("TEST-REST")
+p1.rest()
+p2.rest()
+p3.rest()
+print(p1)
+print(p2)
+print(p3)
