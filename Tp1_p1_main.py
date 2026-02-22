@@ -62,10 +62,12 @@ title("TEST-RECRUIT-CREW-MEMBER")
 p4= Tripulante("Nami","Navigator",389.43,88,50)
 navio.recruit(p4)
 navio.show_manifesto()
+print(f"{Fore.LIGHTWHITE_EX}New member recluted: {navio.crew[-1]} ")
 space()
 
 #Test Kick
 title("TEST-KICK-CREW-MEMBER")
+navio.show_manifesto()
 status=navio.kick("Nami")
 #status=navio.kick("Nami")
 
@@ -74,4 +76,17 @@ if status == True:
 else:
     print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTRED_EX}{status} ")
 
+space()
+
+#Test total Power
+title("TEST-TOTAL-POWER")
 navio.show_manifesto()
+print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio.total_power()} ")
+space()
+
+#Show final manifesto
+title("MANIFESTO")
+navio.show_manifesto()
+print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio.total_power()} ")
+
+
