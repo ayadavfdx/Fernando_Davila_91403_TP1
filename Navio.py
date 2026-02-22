@@ -72,13 +72,4 @@ class Navio:
 
 
 
-p1= Tripulante("zoro","sword",300.423,100,0)
-p2= Tripulante("pepe","sword",500.45,100,21)
-p3= Tripulante("Adam","xyz",2666.33,45,67)
-
-navio=Navio("Olha",[p1,p2])
-navio.recruit(p3)
-
-navio.show_manifesto()
-
 
