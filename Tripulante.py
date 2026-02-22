@@ -7,9 +7,6 @@ from os import system
 
 #Initialize Colorama
 init(autoreset=True)
-#Function to clean console
-def clean_console():
-    system("cls")
 
 #Define Class
 class Tripulante():
