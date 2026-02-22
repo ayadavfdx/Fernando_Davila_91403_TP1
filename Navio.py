@@ -47,12 +47,12 @@ class Navio:
     #Function to kick
     def kick(self,name_tripulante):
         for crew_member in self.__crew:
-            if crew_member== name_tripulante:
+            if crew_member.name== name_tripulante:
                 self.__crew.remove(crew_member)
                 return True
         
         return False
-
+    
     #Function to calculate total power of the crew
     def total_power(self):
         total=0
