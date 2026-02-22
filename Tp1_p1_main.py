@@ -62,3 +62,16 @@ title("TEST-RECRUIT-CREW-MEMBER")
 p4= Tripulante("Nami","Navigator",389.43,88,50)
 navio.recruit(p4)
 navio.show_manifesto()
+space()
+
+#Test Kick
+title("TEST-KICK-CREW-MEMBER")
+status=navio.kick("Nami")
+#status=navio.kick("Nami")
+
+if status == True:
+    print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTGREEN_EX}{status} ")
+else:
+    print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTRED_EX}{status} ")
+
+navio.show_manifesto()
