@@ -36,7 +36,7 @@ class Navio:
         total=0
         for b in self.__crew:
             total += b.bounty
-        return total
+        return round(total,2)
     
     #METHODS
 
@@ -60,14 +60,25 @@ class Navio:
             total += power.power
         return total
 
+    #Function to show manifesto
+    def show_manifesto(self):
+        print(f"{Fore.LIGHTWHITE_EX}Navio:{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX}{self.__name}")
+        print(f" ")
+        print(f"{Fore.LIGHTWHITE_EX}Crew:")
+        for crew in self.__crew:
+            print(crew)
+        print(" ")
+        print(f"{Fore.LIGHTWHITE_EX}Total Bounty: {Fore.LIGHTRED_EX}{self.total_bounty} M{Style.RESET_ALL}")
 
 
 
-p1= Tripulante("zoro","sword",300.423,100,100)
-p2= Tripulante("pepe","sword",500.45,100,100)
-p3= Tripulante("Adam","xyz",222,45,67)
+p1= Tripulante("zoro","sword",300.423,100,0)
+p2= Tripulante("pepe","sword",500.45,100,21)
+p3= Tripulante("Adam","xyz",2666.33,45,67)
 
 navio=Navio("Olha",[p1,p2])
 navio.recruit(p3)
 
 navio.show_manifesto()
+
+
