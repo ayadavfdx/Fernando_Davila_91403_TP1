@@ -40,6 +40,7 @@ class Navio:
     
     #METHODS
 
+
     #Function to recruit 
     def recruit(self,new_tripulante):
         for crew_member in self.__crew:
