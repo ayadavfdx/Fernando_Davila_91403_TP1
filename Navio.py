@@ -34,16 +34,40 @@ class Navio:
     @property
     def total_bounty(self):
         total=0
-        for i in self.__crew:
-            total += i.bounty
+        for b in self.__crew:
+            total += b.bounty
         return total
     
-    #Function to add colors to total bounty
-    def add_bounty_color(self):
-        print(f"Total Bounty of the crew:{Fore.RED}{self.total_bounty}{Style.RESET_ALL}")
+    #METHODS
+
+    #Function to recruit 
+    def recruit(self,new_tripulante):
+        self.__crew.append(new_tripulante)
+
+    #Function to kick
+    def kick(self,name_tripulante):
+        for crew_member in self.__crew:
+            if crew_member== name_tripulante:
+                self.__crew.remove(crew_member)
+                return True
+        
+        return False
+
+    #Function to calculate total power of the crew
+    def total_power(self):
+        total=0
+        for power in self.__crew:
+            total += power.power
+        return total
+
+
+
 
 p1= Tripulante("zoro","sword",300.423,100,100)
 p2= Tripulante("pepe","sword",500.45,100,100)
+p3= Tripulante("Adam","xyz",222,45,67)
 
 navio=Navio("Olha",[p1,p2])
-print(f"{navio.total_bounty}")
+navio.recruit(p3)
+
+navio.show_manifesto()
