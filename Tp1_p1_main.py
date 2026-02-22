@@ -21,9 +21,9 @@ def space():
 #TESTING
 
 #Test create a crew member
-title("Create Crew Members (tripulante)")
+title("Create-Crew-Members (tripulante)".upper())
 p1= Tripulante("Luffy","Captain",900,100,100)
-p2= Tripulante("Sanji","Chef",500,80,100)
+p2= Tripulante("Sanji","Chef",300,80,100)
 p3= Tripulante("Ussop","Sniper",350,75,100)
 print(p1)
 print(p2)
@@ -48,3 +48,17 @@ p3.rest()
 print(p1)
 print(p2)
 print(p3)
+space()
+
+
+#Test Create Navio
+title("Create-Navio".upper())
+navio= Navio("Going Marry",[p1,p2,p3])
+navio.show_manifesto()
+space()
+
+#Test Recruit
+title("TEST-RECRUIT-CREW-MEMBER")
+p4= Tripulante("Nami","Navigator",389.43,88,50)
+navio.recruit(p4)
+navio.show_manifesto()
