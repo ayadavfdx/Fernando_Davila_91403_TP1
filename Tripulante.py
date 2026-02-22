@@ -86,12 +86,5 @@ class Tripulante():
         self.energy= 100
 
 
-p1= Tripulante("Zoro","Janitor",350,100,25)
-p1.work(5)
-print(p1)
 
-p1.rest()
-print(p1)
-#p2= Tripulante("Lufi","Pirate",900,100,80)
-#p2.work(3)
-#print(p2)
+
