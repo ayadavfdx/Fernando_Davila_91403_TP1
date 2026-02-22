@@ -22,9 +22,9 @@ def space():
 
 #Test create a crew member
 title("Create-Crew-Members (tripulante)".upper())
-p1= Tripulante("Luffy","Captain",900,100,100)
-p2= Tripulante("Sanji","Chef",300,80,100)
-p3= Tripulante("Ussop","Sniper",350,75,100)
+p1= Tripulante("Luffy","Captain",1300.65,100,50)
+p2= Tripulante("Sanji","Chef",3010.3,80,70)
+p3= Tripulante("Ussop","Sniper",3250.65,75,80)
 print(p1)
 print(p2)
 print(p3)
@@ -34,7 +34,7 @@ space()
 title("TEST-WORK")
 p1.work(5)
 p2.work(3)
-p3.work(20)
+p3.work(10)
 print(p1)
 print(p2)
 print(p3)
@@ -61,6 +61,8 @@ space()
 title("TEST-RECRUIT-CREW-MEMBER")
 p4= Tripulante("Nami","Navigator",389.43,88,50)
 navio.recruit(p4)
+#p5= Tripulante("Nami","Janitor",563.23,85,30)
+#navio.recruit(p5)
 navio.show_manifesto()
 print(f"{Fore.LIGHTWHITE_EX}New member recluted: {navio.crew[-1]} ")
 space()
@@ -88,5 +90,7 @@ space()
 title("MANIFESTO")
 navio.show_manifesto()
 print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio.total_power()} ")
+
+
 
 
