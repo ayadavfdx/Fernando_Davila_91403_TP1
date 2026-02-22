@@ -42,6 +42,10 @@ class Navio:
 
     #Function to recruit 
     def recruit(self,new_tripulante):
+        for crew_member in self.__crew:
+            if crew_member.name == new_tripulante.name:
+                raise ValueError(f"{Fore.LIGHTWHITE_EX} Tripulante already exists")
+            
         self.__crew.append(new_tripulante)
 
     #Function to kick
