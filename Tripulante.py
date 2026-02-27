@@ -66,12 +66,12 @@ class Tripulante():
         elif  20< self.__energy <=50:
             return (f"{Back.YELLOW}{" "*bar}{Style.RESET_ALL}{Fore.YELLOW} {energy} %{Style.RESET_ALL}")
         else:
-            return (f"{Back.GREEN}{" "*bar}{Style.RESET_ALL}{Fore.GREEN}{energy} %{Style.RESET_ALL}")
+            return (f"{Back.GREEN}{" "*bar}{Style.RESET_ALL}{Fore.GREEN} {energy} %{Style.RESET_ALL}")
     
     #String to show in console
     def __str__(self):
         return (
-    f"{self.random_colors()}«{self.__name} [{self.__role}]"
+    f"{self.random_colors()}«{self.__name} [{self.__role}]\n"
     f"{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}-Bounty:{Style.RESET_ALL}"
     f"{self.random_colors()}{self.__bounty} M "
     f"{Fore.LIGHTWHITE_EX}|Power: {Style.RESET_ALL}"
