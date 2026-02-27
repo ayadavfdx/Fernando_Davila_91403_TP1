@@ -3,7 +3,7 @@ from random import choice
 from colorama import Style
 from colorama import Fore
 from colorama import init
-from os import system
+from colorama import Back
 
 #Initialize Colorama
 init(autoreset=True)
@@ -59,12 +59,14 @@ class Tripulante():
     #Function to read the state of the energy and change color
     @property
     def energy_color(self):
+        energy= self.__energy
+        bar= energy //10
         if 0<= self.__energy <=20:
-            return (f"{Fore.RED} {self.__energy} {Style.RESET_ALL}")
+            return (f"{Back.RED}{' '*3}{Style.RESET_ALL}{Fore.RED} {energy} %{Style.RESET_ALL}")
         elif  20< self.__energy <=50:
-            return (f"{Fore.YELLOW} {self.__energy} {Style.RESET_ALL}")
+            return (f"{Back.YELLOW}{" "*bar}{Style.RESET_ALL}{Fore.YELLOW} {energy} %{Style.RESET_ALL}")
         else:
-            return (f"{Fore.GREEN} {self.__energy} {Style.RESET_ALL}")
+            return (f"{Back.GREEN}{" "*bar}{Style.RESET_ALL}{Fore.GREEN}{energy} %{Style.RESET_ALL}")
     
     #String to show in console
     def __str__(self):
