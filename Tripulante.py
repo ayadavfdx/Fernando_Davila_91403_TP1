@@ -68,7 +68,15 @@ class Tripulante():
     
     #String to show in console
     def __str__(self):
-        return (f"{self.random_colors()}«{self.__name} [{self.__role}]{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}-Bounty:{Style.RESET_ALL}{self.random_colors()}{self.__bounty} M {Fore.LIGHTWHITE_EX}|Power: {Style.RESET_ALL}{self.random_colors()}{self.power} {Style.RESET_ALL}{Fore.LIGHTWHITE_EX}|Energy:{Style.RESET_ALL}{self.energy_color}  » ")
+        return (
+    f"{self.random_colors()}«{self.__name} [{self.__role}]"
+    f"{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}-Bounty:{Style.RESET_ALL}"
+    f"{self.random_colors()}{self.__bounty} M "
+    f"{Fore.LIGHTWHITE_EX}|Power: {Style.RESET_ALL}"
+    f"{self.random_colors()}{self.power} "
+    f"{Style.RESET_ALL}{Fore.LIGHTWHITE_EX}|Energy:"
+    f"{Style.RESET_ALL}{self.energy_color}  » "
+                )
 
     #Function to choose random colors
     def random_colors(self):
