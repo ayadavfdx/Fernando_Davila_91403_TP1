@@ -23,6 +23,12 @@ class Navegador(Tripulante):
         else:
             self.__milhas_navegadas= value
 
+    def executar_acao(self,navio):
+        self.__milhas_navegadas += 50
+        print(
+            f"{self.random_colors()}{self.name}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} Took a safer way "
+            f"+50 miles, (Total: {Style.RESET_ALL}{self.milhas_navegadas})"
+            )
 
     def __str__(self):
         info= super().__str__()
