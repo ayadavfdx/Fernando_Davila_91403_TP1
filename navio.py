@@ -45,6 +45,7 @@ class Navio:
             if value ==0:
                 print(Fore.RED + "---GAME OVER---" + Style.RESET_ALL)
     
+    #Function to show hearths in console
     @property
     def show_hearths(self):
         hearth= self.__life
@@ -104,6 +105,13 @@ class Navio:
         for power in self.__crew:
             total += power.power
         return total
+
+    #Function to add life
+    def repair(self,value):
+        gained_life= self.__life + value
+        return gained_life
+
+
 
     #Function to show manifesto
     def show_manifesto(self):
