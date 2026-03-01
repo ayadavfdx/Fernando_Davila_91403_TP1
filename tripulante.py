@@ -10,7 +10,7 @@ init(autoreset=True)
 
 #Define Class
 class Tripulante():
-    def __init__(self,nome,recompensa,poder,energia=100,status = "Ok"):
+    def __init__(self,nome,recompensa=0.0,poder=0,energia=100,status = "Ok"):
         self.__nome=str(nome)
         self.__recompensa=float(recompensa)
         self.poder=int(poder)
