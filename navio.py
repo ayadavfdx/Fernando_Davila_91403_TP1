@@ -108,18 +108,16 @@ class Navio:
 
     #Function to add life
     def repair(self,value):
-        gained_life= self.__life + value
-        return gained_life
+        self.life += value
 
     #Function to damage life
     def damage(self,value):
-        reduced_life= self.__life - value
-        return reduced_life
+        self.life -= value
     
     #Function to obtain gold
     def obtain_gold(self,value):
-        get_gold= self.__gold + value
-        return get_gold
+        self.gold += value
+
 
     #Function to show manifesto
     def show_manifesto(self):
