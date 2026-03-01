@@ -8,9 +8,10 @@ from tripulante import Tripulante
 init(autoreset= True)
 
 class Navio:
-    def __init__(self,name,crew,life=100):
+    def __init__(self,name,crew,life=100,gold=0):
         self.__name=str(name)
         self.life=int(life)
+        self.gold=int(gold)
 
         #Validate objets of class Tripulante
         if isinstance(crew,list):
@@ -44,7 +45,16 @@ class Navio:
             if value ==0:
                 print(Fore.RED + "---GAME OVER---" + Style.RESET_ALL)
             
+    @property
+    def gold(self):
+        return self.__gold
     
+    @gold.setter
+    def gold(self,value):
+        if value <0:
+            raise ValueError(Fore.BLUE +"GOLD CANNOT BE UNDER 0" + Style.RESET_ALL)
+        else:
+            self.__gold=value
 
     #Property to calculate bounty
     @property
@@ -90,7 +100,6 @@ class Navio:
             print(crew)
         print(" ")
         print(f"{Fore.LIGHTWHITE_EX}Total Bounty: {Fore.LIGHTRED_EX}{self.total_bounty} M{Style.RESET_ALL}")
-
 
 
 
