@@ -8,7 +8,7 @@ from colorama import Style,Fore,init
 init(autoreset=True)
 
 class Navegador(Tripulante):
-    def __init__(self,nome,recompensa,poder,energia=100,milhas_navegadas=0):
+    def __init__(self,nome,recompensa=0.0,poder=0,energia=100,milhas_navegadas=0):
         super().__init__(nome,recompensa,poder,energia)
         self.milhas_navegadas=int(milhas_navegadas)
 
