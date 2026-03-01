@@ -8,8 +8,8 @@ from colorama import Style,Fore,init
 init(autoreset=True)
 
 class Espadachim(Tripulante):
-    def __init__(self,name,bounty,power,energy,espadas=[]):
-        super().__init__(name,bounty,power,energy)
+    def __init__(self,nome,recompensa,poder,energia,espadas=[]):
+        super().__init__(nome,recompensa,poder,energia)
         self.__espadas=list(espadas)
 
     @property
@@ -18,10 +18,10 @@ class Espadachim(Tripulante):
     
     def executar_acao(self,navio):
         bonus= 10* len(self.__espadas)
-        self.power += bonus
+        self.poder += bonus
         print(
-        f"{self.random_colors()}{self.name}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} attacked"
-        f", Current Power:{Style.RESET_ALL}{self.random_colors()}{self.power}{Style.RESET_ALL}"
+        f"{self.random_colors()}{self.nome}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} attacked"
+        f", Current poder:{Style.RESET_ALL}{self.random_colors()}{self.poder}{Style.RESET_ALL}"
             )
 
     def __str__(self):
