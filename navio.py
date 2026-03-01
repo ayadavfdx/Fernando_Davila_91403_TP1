@@ -44,7 +44,21 @@ class Navio:
             self.__life=value
             if value ==0:
                 print(Fore.RED + "---GAME OVER---" + Style.RESET_ALL)
-            
+    
+    @property
+    def show_hearths(self):
+        hearth= self.__life
+        bar= hearth//10
+
+        if hearth == 0:
+            return (f"{' '}")
+        elif 0 < hearth <=10:
+            return (f"{'💙'}")
+        else:
+            return (f"{'💙' * bar}")
+
+
+
     @property
     def gold(self):
         return self.__gold
@@ -100,7 +114,7 @@ class Navio:
             print(crew)
         print(" ")
         print(f"{Fore.LIGHTWHITE_EX}Total Bounty: {Fore.LIGHTRED_EX}{self.total_bounty} M{Style.RESET_ALL}")
-        print(f"{Fore.LIGHTWHITE_EX}Life: {self.__life} {Style.RESET_ALL}")
+        print(f"{Fore.LIGHTWHITE_EX}Life: {self.show_hearths} {self.__life} {Style.RESET_ALL}")
         print(f"{Fore.LIGHTWHITE_EX}Gold:{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX} {self.__gold} {Style.RESET_ALL} ")
 
 
