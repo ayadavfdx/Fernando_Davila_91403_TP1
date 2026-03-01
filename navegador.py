@@ -1,0 +1,30 @@
+
+#Import all necessary
+from tripulante import Tripulante
+from colorama import Style,Fore,init
+
+
+#Initialize colorama
+init(autoreset=True)
+
+class Espadachim(Tripulante):
+    def __init__(self,name,bounty,power,energy,milhas_navegadas=0):
+        super().__init__(name,bounty,power,energy)
+        self.milhas_navegadas=int(milhas_navegadas)
+
+    @property
+    def milhas_navegadas(self):
+        return self.__milhas_navegadas
+    
+    @milhas_navegadas.setter
+    def milhas_navegadas(self,value):
+        if value <0:
+            self.__milhas_navegadas=0
+        else:
+            self.__milhas_navegadas= value
+
+
+    def __str__(self):
+        info= super().__str__()
+        return (f"{info} {Fore.LIGHTWHITE_EX}|Swords:{Style.RESET_ALL} {self.random_colors()}{', '.join(self.__espadas)}")
+
