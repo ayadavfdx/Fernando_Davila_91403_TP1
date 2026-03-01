@@ -25,26 +25,29 @@ def pause():
 def space():
     print ("\n"*5)
 
+#Crew for testing
+p1= Tripulante("Luffy",1300.65,100,100)
+p2= Tripulante("Sanji",3010.3,100,70)
+p3= Tripulante("Ussop",3250.65,100,80)
+navio_test= Navio("Boat",[p1,p2,p3])
 #TESTING
 
 #Test create a crew member
 def test_create_members():
     title("Create-Crew-Members (tripulante)".upper())
-    p1= Tripulante("Luffy",1300.65,100,100)
-    p2= Tripulante("Sanji",3010.3,100,70)
-    p3= Tripulante("Ussop",3250.65,100,80)
     print(p1)
     print(p2)
     print(p3)
 
 #Test work
-title("TEST-WORK")
-p1.trabalhar(5)
-p2.trabalhar(3)
-p3.trabalhar(10)
-print(p1)
-print(p2)
-print(p3)
+def test_work():
+    title("TEST-WORK")
+    p1.trabalhar(5)
+    p2.trabalhar(3)
+    p3.trabalhar(10)
+    print(p1)
+    print(p2)
+    print(p3)
 
 
 #Test Rest
