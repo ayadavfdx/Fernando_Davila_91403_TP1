@@ -121,7 +121,11 @@ class Navio:
     def obtain_gold(self,value):
         self.gold += value
 
+    #Function to action
+    def executar_acao(self,navio):
+        print(f"This message will be replaced")
 
+        
     #Function to show manifesto
     def show_manifesto(self):
         print(f"{Fore.LIGHTWHITE_EX}Navio:{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX}{self.__name}")
