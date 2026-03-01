@@ -16,6 +16,12 @@ def clean_console():
 def title(title):
     print(f"{Fore.LIGHTGREEN_EX}-----{title}-----")
 
+def pause():
+    input(
+        f"\n{Fore.LIGHTWHITE_EX}Press{Style.RESET_ALL}"
+        f"{Fore.LIGHTBLUE_EX}Enter{Style.RESET_ALL} to continue..."
+        )
+
 def space():
     print ("\n"*5)
 #TESTING
@@ -59,7 +65,7 @@ space()
 
 #Test Recruit
 title("TEST-RECRUIT-CREW-MEMBER")
-p4= Tripulante("Nami","Navigator",389.43,88,50)
+p4= Tripulante("Nami",389.43,88,50)
 navio.recrutar(p4)
 #p5= Tripulante("Nami","Janitor",563.23,85,30)
 #navio.recruit(p5)
