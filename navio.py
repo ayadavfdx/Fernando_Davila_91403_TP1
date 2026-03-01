@@ -23,6 +23,12 @@ class Navio:
         else:
             self.__tripulacao= None
 
+        #Validate  to not return none
+        if tripulacao is None:
+            self.__tripulacao=[]
+        else:
+            self.__tripulacao=list(tripulacao)
+
     #Create getter, make private attributes
     @property
     def nome(self):
