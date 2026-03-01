@@ -93,8 +93,42 @@ def test_total_power():
     navio_test.mostrar_manifesto()
     print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio_test.calcular_poder_total()} ")
 
+def menu():
+    while True:
+        clean_console()
+        title(f"{Fore.LIGHTCYAN_EX}---MENU---{Style.RESET_ALL}")
 
+        print("1 - Create Crew Members")
+        print("2 - Test Work")
+        print("3 - Test Rest")
+        print("4 - Show Ship Manifest")
+        print("5 - Recruit Member")
+        print("6 - Kick Member")
+        print("7 - Show Total Power")
+        print("8 - Exit")
 
+        option= input("Select an option: ")
+        clean_console()
 
+        if option == "1":
+            test_create_members()
+        elif option == "2":
+            test_work()
+        elif option == "3":
+            test_rest()
+        elif option == "4":
+            test_show_navio()
+        elif option == "5":
+            test_recruit()
+        elif option == "6":
+            test_kick()
+        elif option == "7":
+            test_total_power()
+        elif option == "8":
+            print("BYE")
+            break
+        else:
+            print("Select an option")
 
+        pause()
 
