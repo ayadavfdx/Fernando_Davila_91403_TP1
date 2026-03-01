@@ -76,28 +76,24 @@ def test_recruit():
 
 
 #Test Kick
-title("TEST-KICK-CREW-MEMBER")
-navio.mostrar_manifesto()
-status=navio.expulsar("Nami")
-#status=navio.expulsar("Nami")
+def test_kick():
+    title("TEST-KICK-CREW-MEMBER")
+    navio_test.mostrar_manifesto()
+    status=navio_test.expulsar("Nami")
+    #status=navio_test.expulsar("Nami")
 
-if status == True:
-    print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTGREEN_EX}{status} ")
-else:
-    print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTRED_EX}{status} ")
-
-space()
+    if status == True:
+        print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTGREEN_EX}{status} ")
+    else:
+        print(f"{Fore.LIGHTWHITE_EX}Kick Status: {Fore.LIGHTRED_EX}{status} ")
 
 #Test total Power
-title("TEST-TOTAL-POWER")
-navio.mostrar_manifesto()
-print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio.calcular_poder_total()} ")
-space()
+def test_total_power():
+    title("TEST-TOTAL-POWER")
+    navio_test.mostrar_manifesto()
+    print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio_test.calcular_poder_total()} ")
 
-#Show final manifesto
-title("MANIFESTO")
-navio.mostrar_manifesto()
-print(f"{Fore.LIGHTWHITE_EX}Total Power: {Fore.LIGHTYELLOW_EX}{navio.calcular_poder_total()} ")
+
 
 
 
