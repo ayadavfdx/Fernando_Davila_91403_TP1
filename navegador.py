@@ -7,7 +7,7 @@ from colorama import Style,Fore,init
 #Initialize colorama
 init(autoreset=True)
 
-class Espadachim(Tripulante):
+class Navegador(Tripulante):
     def __init__(self,name,bounty,power,energy,milhas_navegadas=0):
         super().__init__(name,bounty,power,energy)
         self.milhas_navegadas=int(milhas_navegadas)
@@ -26,5 +26,4 @@ class Espadachim(Tripulante):
 
     def __str__(self):
         info= super().__str__()
-        return (f"{info} {Fore.LIGHTWHITE_EX}|Swords:{Style.RESET_ALL} {self.random_colors()}{', '.join(self.__espadas)}")
-
+        return (f"{info} {Fore.LIGHTWHITE_EX}|Milhas_navegadas:{Style.RESET_ALL} {self.random_colors()}{self.__milhas_navegadas}")
