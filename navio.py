@@ -100,6 +100,7 @@ class Navio:
             print(crew)
         print(" ")
         print(f"{Fore.LIGHTWHITE_EX}Total Bounty: {Fore.LIGHTRED_EX}{self.total_bounty} M{Style.RESET_ALL}")
-
+        print(f"{Fore.LIGHTWHITE_EX}Life: {self.__life} {Style.RESET_ALL}")
+        print(f"{Fore.LIGHTWHITE_EX}Gold:{Style.RESET_ALL} {Fore.LIGHTYELLOW_EX} {self.__gold} {Style.RESET_ALL} ")
 
 
