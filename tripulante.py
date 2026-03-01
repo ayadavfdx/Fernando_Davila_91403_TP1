@@ -19,8 +19,10 @@ class Tripulante():
 
     #Function to validate range to 0-100
     def __validate_range(self,value):
-        if value <0 or value > 100:
-            raise ValueError(Fore.BLUE + "Must be a value between (0-100) try again!".upper() + Style.RESET_ALL)
+        if value <0:
+            return 0
+        elif value >100:
+            return 100
         else:    
             return value
     
@@ -91,7 +93,6 @@ class Tripulante():
 
     def rest(self):
         self.energy= 100
-
 
 
 
