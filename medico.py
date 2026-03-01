@@ -23,6 +23,16 @@ class Medico(Tripulante):
         else:
             self.__pacientes_curados= value
 
+    def executar_acao(self,navio):
+        injured= min(navio.crew, key=lambda e:e.energy)
+        injured.energy +=40
+        self.pacientes_curados += 1
+
+        print(
+            f"{self.random_colors()}{self.name}{Style.RESET_ALL} {Fore.LIGHTWHITE_EX} healed "
+            f"{Style.RESET_ALL}{injured.name} {Fore.LIGHTWHITE_EX}Energy is now{Style.RESET_ALL}"
+            f"{self.random_colors()}{injured.energy}{Style.RESET_ALL}"
+        )
 
     def __str__(self):
         info= super().__str__()
