@@ -8,7 +8,7 @@ from colorama import Style,Fore,init
 init(autoreset=True)
 
 class Cozinheiro(Tripulante):
-    def __init__(self,nome,recompensa,poder,energia=100,refeicoes_preparadas=0):
+    def __init__(self,nome,recompensa=0.0,poder=0,energia=100,refeicoes_preparadas=0):
         super().__init__(nome,recompensa,poder,energia)
         self.refeicoes_preparadas=int(refeicoes_preparadas)
 
