@@ -38,12 +38,15 @@ class Navio:
     
     @life.setter
     def life(self,value):
-        if value <0 or value > 100:
-            raise ValueError(Fore.BLUE + "Must be a value between (0-100) try again!".upper() + Style.RESET_ALL)
-        else:    
-            self.__life=value
-            if value ==0:
-                print(Fore.RED + "---GAME OVER---" + Style.RESET_ALL)
+        if value <0:
+            self.__life=0
+        elif value >100:
+            self.__life = 100
+        else:
+            self.__life= value
+
+        if value ==0:
+            print(Fore.RED + "---GAME OVER---" + Style.RESET_ALL)
     
     #Function to show hearths in console
     @property
