@@ -70,6 +70,9 @@ class Tripulante():
     def status(self):
         return self.__status
 
+    @status.setter
+    def status(self,value):
+        self.__status=value
 
     #String to show in console
     def __str__(self):
