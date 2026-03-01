@@ -58,7 +58,7 @@ class Tripulante():
     @property
     def energia_color(self):
         energia= self.__energia
-        bar= energia //10
+        bar= int(energia) //10
         if 0<= self.__energia <=20:
             return (f"{Back.RED}{' '*3}{Style.RESET_ALL}{Fore.RED} {energia} %{Style.RESET_ALL}")
         elif  20< self.__energia <=50:
