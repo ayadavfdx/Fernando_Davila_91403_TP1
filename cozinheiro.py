@@ -23,6 +23,16 @@ class Cozinheiro(Tripulante):
         else:
             self.__refeicoes_preparadas= value
 
+    def executar_acao(self,navio):
+        for members in navio.tripulacao:
+            members.energia +=20
+
+        self.refeicoes_preparadas +=1
+        print(f"{self.random_colors()}{self.nome}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} prepared a meal! "
+            f"Everyone gained +20 energy.{Style.RESET_ALL}"
+            )
+
+
 
     def __str__(self):
         info= super().__str__()
