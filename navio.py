@@ -111,7 +111,10 @@ class Navio:
         gained_life= self.__life + value
         return gained_life
 
-
+    #Function to damage life
+    def damage(self,value):
+        reduced_life= self.__life - value
+        return reduced_life
 
     #Function to show manifesto
     def show_manifesto(self):
