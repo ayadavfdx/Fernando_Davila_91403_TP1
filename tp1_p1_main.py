@@ -49,33 +49,31 @@ def test_work():
     print(p2)
     print(p3)
 
-
 #Test Rest
-title("TEST-REST")
-p1.descansar()
-p2.descansar()
-p3.descansar()
-print(p1)
-print(p2)
-print(p3)
-space()
-
+def test_rest():
+    title("TEST-REST")
+    p1.descansar()
+    p2.descansar()
+    p3.descansar()
+    print(p1)
+    print(p2)
+    print(p3)
 
 #Test Create Navio
-title("Create-Navio".upper())
-navio= Navio("Going Marry",[p1,p2,p3],100)
-navio.mostrar_manifesto()
-space()
+def test_show_navio():
+    title("Create-Navio".upper())
+    navio_test.mostrar_manifesto()
 
 #Test Recruit
-title("TEST-RECRUIT-CREW-MEMBER")
-p4= Tripulante("Nami",389.43,88,50)
-navio.recrutar(p4)
-#p5= Tripulante("Nami","Janitor",563.23,85,30)
-#navio.recruit(p5)
-navio.mostrar_manifesto()
-print(f"{Fore.LIGHTWHITE_EX}New member recluted: {navio.tripulacao[-1]} ")
-space()
+def test_recruit():
+    title("TEST-RECRUIT-CREW-MEMBER")
+    p4= Tripulante("Nami",389.43,88,50)
+    navio_test.recrutar(p4)
+    #p5= Tripulante("Nami",563.23,85,30)
+    #navio_test.recruit(p5)
+    navio_test.mostrar_manifesto()
+    print(f"{Fore.LIGHTWHITE_EX}New member recluted: {navio_test.tripulacao[-1]} ")
+
 
 #Test Kick
 title("TEST-KICK-CREW-MEMBER")
