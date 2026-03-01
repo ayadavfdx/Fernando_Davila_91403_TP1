@@ -10,12 +10,13 @@ init(autoreset=True)
 
 #Define Class
 class Tripulante():
-    def __init__(self,name,role,bounty,power,energy):
+    def __init__(self,name,role,bounty,power,energy=100,status = "ok"):
         self.__name=str(name)
         self.__role=str(role)
         self.__bounty=float(bounty)
         self.power=int(power)
         self.energy=int(energy)
+        self.__status= status
 
     #Function to validate range to 0-100
     def __validate_range(self,value):
@@ -70,6 +71,11 @@ class Tripulante():
         else:
             return (f"{Back.GREEN}{" "*bar}{Style.RESET_ALL}{Fore.GREEN} {energy} %{Style.RESET_ALL}")
     
+    @property
+    def status(self):
+        return self.__status
+
+
     #String to show in console
     def __str__(self):
         return (
