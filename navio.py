@@ -8,9 +8,9 @@ from tripulante import Tripulante
 init(autoreset= True)
 
 class Navio:
-    def __init__(self,name,crew,life):
+    def __init__(self,name,crew,life=100):
         self.__name=str(name)
-        self.__life=int(life)
+        self.life=int(life)
 
         #Validate objets of class Tripulante
         if isinstance(crew,list):
@@ -34,6 +34,16 @@ class Navio:
     @property
     def life(self):
         return self.__life
+    
+    @life.setter
+    def life(self,value):
+        if value <0 or value > 100:
+            raise ValueError(Fore.BLUE + "Must be a value between (0-100) try again!".upper() + Style.RESET_ALL)
+        else:    
+            self.__life=value
+            if value ==0:
+                print(Fore.RED + "---GAME OVER---" + Style.RESET_ALL)
+            
     
 
     #Property to calculate bounty
