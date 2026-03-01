@@ -8,7 +8,7 @@ from colorama import Style,Fore,init
 init(autoreset=True)
 
 class Espadachim(Tripulante):
-    def __init__(self,nome,recompensa,poder,energia=100,espadas=[]):
+    def __init__(self,nome,recompensa=0.0,poder=0,energia=100,espadas=[]):
         super().__init__(nome,recompensa,poder,energia)
         self.__espadas=list(espadas)
 
