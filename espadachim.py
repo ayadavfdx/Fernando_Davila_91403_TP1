@@ -20,8 +20,8 @@ class Espadachim(Tripulante):
         bonus= 10* len(self.__espadas)
         self.power += bonus
         print(
-        f"{self.random_colors()}{self.name}{Style.RESET_ALL} attacked"
-        f", Current Power:{self.random_colors()}{self.power}{Style.RESET_ALL}"
+        f"{self.random_colors()}{self.name}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} attacked"
+        f", Current Power:{Style.RESET_ALL}{self.random_colors()}{self.power}{Style.RESET_ALL}"
             )
 
     def __str__(self):
