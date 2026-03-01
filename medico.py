@@ -30,7 +30,8 @@ class Medico(Tripulante):
 
         print(
             f"{self.random_colors()}{self.nome}{Style.RESET_ALL} {Fore.LIGHTWHITE_EX} healed "
-            f"{Style.RESET_ALL}{injured.nome} {Fore.LIGHTWHITE_EX}energia is now {Style.RESET_ALL}"
+            f"{Style.RESET_ALL}{self.random_colors()}{injured.nome}{Style.RESET_ALL}"
+            f"{Fore.LIGHTWHITE_EX}energia is now {Style.RESET_ALL}"
             f"{ self.random_colors()}{injured.energia}{Style.RESET_ALL}"
         )
 
