@@ -3,8 +3,8 @@
 from colorama import Style
 from colorama import Fore
 from colorama import init
-from Tripulante import Tripulante
-from Navio import Navio
+from tripulante import Tripulante
+from navio import Navio
 from os import system
 
 #Initialice colorama
@@ -22,9 +22,9 @@ def space():
 
 #Test create a crew member
 title("Create-Crew-Members (tripulante)".upper())
-p1= Tripulante("Luffy","Captain",1300.65,100,50)
-p2= Tripulante("Sanji","Chef",3010.3,80,70)
-p3= Tripulante("Ussop","Sniper",3250.65,75,80)
+p1= Tripulante("Luffy","Captain",1300.65,100,100)
+p2= Tripulante("Sanji","Chef",3010.3,100,70)
+p3= Tripulante("Ussop","Sniper",3250.65,100,80)
 print(p1)
 print(p2)
 print(p3)

@@ -2,7 +2,7 @@
 from colorama import Style
 from colorama import Fore
 from colorama import init
-from Tripulante import Tripulante
+from tripulante import Tripulante
 
 #Initialice colorama
 init(autoreset= True)
