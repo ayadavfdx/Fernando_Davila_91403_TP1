@@ -7,7 +7,7 @@ from colorama import Style,Fore,init
 #Initialize colorama
 init(autoreset=True)
 
-class Medico(Tripulante):
+class Cozinheiro(Tripulante):
     def __init__(self,name,bounty,power,energy,refeicoes_preparadas=0):
         super().__init__(name,bounty,power,energy)
         self.refeicoes_preparadas=int(refeicoes_preparadas)
