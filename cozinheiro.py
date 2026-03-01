@@ -26,4 +26,4 @@ class Medico(Tripulante):
 
     def __str__(self):
         info= super().__str__()
-        return (f"{info} {Fore.LIGHTWHITE_EX}|Cured:{Style.RESET_ALL} {self.random_colors()}{self.__refeicoes_preparadas}")
+        return (f"{info} {Fore.LIGHTWHITE_EX}|Food Cooked:{Style.RESET_ALL} {self.random_colors()}{self.__refeicoes_preparadas}")
