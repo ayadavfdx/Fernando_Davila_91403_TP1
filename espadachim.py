@@ -16,6 +16,14 @@ class Espadachim(Tripulante):
     def espadas(self):
         return self.__espadas
     
+    def executar_acao(self,navio):
+        bonus= 10* len(self.__espadas)
+        self.power += bonus
+        print(
+        f"{self.random_colors()}{self.name}{Style.RESET_ALL} attacked"
+        f", Current Power:{self.random_colors()}{self.power}{Style.RESET_ALL}"
+            )
+
     def __str__(self):
         info= super().__str__()
         return (f"{info} {Fore.LIGHTWHITE_EX}|Swords:{Style.RESET_ALL} {self.random_colors()}{', '.join(self.__espadas)}")
