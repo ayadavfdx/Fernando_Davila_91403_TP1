@@ -8,7 +8,7 @@ from tripulante import Tripulante
 init(autoreset= True)
 
 class Navio:
-    def __init__(self,nome,tripulacao,vida=100,ouro=0):
+    def __init__(self,nome,tripulacao=None,vida=100,ouro=0):
         self.__nome=str(nome)
         self.vida=int(vida)
         self.ouro=int(ouro)
