@@ -8,8 +8,9 @@ from tripulante import Tripulante
 init(autoreset= True)
 
 class Navio:
-    def __init__(self,name,crew):
+    def __init__(self,name,crew,life):
         self.__name=str(name)
+        self.__life=int(life)
 
         #Validate objets of class Tripulante
         if isinstance(crew,list):
@@ -30,6 +31,11 @@ class Navio:
     def crew(self):
         return self.__crew
     
+    @property
+    def life(self):
+        return self.__life
+    
+
     #Property to calculate bounty
     @property
     def total_bounty(self):
