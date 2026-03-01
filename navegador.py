@@ -8,8 +8,8 @@ from colorama import Style,Fore,init
 init(autoreset=True)
 
 class Navegador(Tripulante):
-    def __init__(self,name,bounty,power,energy,milhas_navegadas=0):
-        super().__init__(name,bounty,power,energy)
+    def __init__(self,nome,recompensa,poder,energia,milhas_navegadas=0):
+        super().__init__(nome,recompensa,poder,energia)
         self.milhas_navegadas=int(milhas_navegadas)
 
     @property
@@ -26,7 +26,7 @@ class Navegador(Tripulante):
     def executar_acao(self,navio):
         self.__milhas_navegadas += 50
         print(
-            f"{self.random_colors()}{self.name}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} Took a safer way "
+            f"{self.random_colors()}{self.nome}{Style.RESET_ALL}{Fore.LIGHTWHITE_EX} Took a safer way "
             f"+50 miles, (Total: {Style.RESET_ALL}{self.milhas_navegadas})"
             )
 
