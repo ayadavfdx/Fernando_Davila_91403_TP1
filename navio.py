@@ -115,6 +115,11 @@ class Navio:
     def damage(self,value):
         reduced_life= self.__life - value
         return reduced_life
+    
+    #Function to obtain gold
+    def obtain_gold(self,value):
+        get_gold= self.__gold + value
+        return get_gold
 
     #Function to show manifesto
     def show_manifesto(self):
