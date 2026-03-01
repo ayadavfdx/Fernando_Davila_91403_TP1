@@ -19,7 +19,7 @@ def title(title):
 def pause():
     input(
         f"\n{Fore.LIGHTWHITE_EX}Press{Style.RESET_ALL}"
-        f"{Fore.LIGHTBLUE_EX}Enter{Style.RESET_ALL} to continue..."
+        f"{Fore.LIGHTBLUE_EX} Enter{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}to continue..."
         )
 
 def space():
@@ -96,7 +96,7 @@ def test_total_power():
 def menu():
     while True:
         clean_console()
-        title(f"{Fore.LIGHTCYAN_EX}---MENU---{Style.RESET_ALL}")
+        title(f"{Fore.LIGHTCYAN_EX}MENU")
 
         print("1 - Create Crew Members")
         print("2 - Test Work")
@@ -132,3 +132,4 @@ def menu():
 
         pause()
 
+menu()
