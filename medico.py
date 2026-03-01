@@ -24,7 +24,7 @@ class Medico(Tripulante):
             self.__pacientes_curados= value
 
     def executar_acao(self,navio):
-        injured= min(navio.crew, key=lambda e:e.energia)
+        injured= min(navio.tripulacao, key=lambda e:e.energia)
         injured.energia +=40
         self.pacientes_curados += 1
 
