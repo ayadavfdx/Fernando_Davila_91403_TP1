@@ -10,9 +10,8 @@ init(autoreset=True)
 
 #Define Class
 class Tripulante():
-    def __init__(self,name,role,bounty,power,energy=100,status = "ok"):
+    def __init__(self,name,bounty,power,energy=100,status = "ok"):
         self.__name=str(name)
-        self.__role=str(role)
         self.__bounty=float(bounty)
         self.power=int(power)
         self.energy=int(energy)
@@ -32,10 +31,6 @@ class Tripulante():
     @property
     def name(self):
         return self.__name
-    
-    @property
-    def role(self):
-        return self.__role
     
     @property
     def bounty(self):
