@@ -2,6 +2,8 @@
 * Python 3.10+
 * "colorama" library
 * TO INSTALL: pip install colorama (cmd.exe)
+* "uv"
+*TO INSTALL: pip uv colorama (cmd.exe)
 
 # One Piece – Grand Line Adventures
 This project is a simulation game inspired by the One Piece universe.  
