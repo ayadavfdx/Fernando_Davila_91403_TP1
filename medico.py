@@ -8,8 +8,8 @@ from colorama import Style,Fore,init
 init(autoreset=True)
 
 class Medico(Tripulante):
-    def __init__(self,name,bounty,power,energy,pacientes_curados=0):
-        super().__init__(name,bounty,power,energy)
+    def __init__(self,nome,recompensa=0.0,poder=0,energia=100,pacientes_curados=0):
+        super().__init__(nome,recompensa,poder,energia)
         self.pacientes_curados=int(pacientes_curados)
 
     @property
@@ -24,14 +24,15 @@ class Medico(Tripulante):
             self.__pacientes_curados= value
 
     def executar_acao(self,navio):
-        injured= min(navio.crew, key=lambda e:e.energy)
-        injured.energy +=40
+        injured= min(navio.tripulacao, key=lambda e:e.energia)
+        injured.energia +=40
         self.pacientes_curados += 1
 
         print(
-            f"{self.random_colors()}{self.name}{Style.RESET_ALL} {Fore.LIGHTWHITE_EX} healed "
-            f"{Style.RESET_ALL}{injured.name} {Fore.LIGHTWHITE_EX}Energy is now{Style.RESET_ALL}"
-            f"{self.random_colors()}{injured.energy}{Style.RESET_ALL}"
+            f"{self.random_colors()}{self.nome}{Style.RESET_ALL} {Fore.LIGHTWHITE_EX} healed "
+            f"{Style.RESET_ALL}{self.random_colors()}{injured.nome}{Style.RESET_ALL}"
+            f"{Fore.LIGHTWHITE_EX}energia is now {Style.RESET_ALL}"
+            f"{ self.random_colors()}{injured.energia}{Style.RESET_ALL}"
         )
 
     def __str__(self):

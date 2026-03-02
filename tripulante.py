@@ -10,11 +10,11 @@ init(autoreset=True)
 
 #Define Class
 class Tripulante():
-    def __init__(self,name,bounty,power,energy=100,status = "ok"):
-        self.__name=str(name)
-        self.__bounty=float(bounty)
-        self.power=int(power)
-        self.energy=int(energy)
+    def __init__(self,nome,recompensa=0.0,poder=0,energia=100,status = "Ok"):
+        self.__nome=str(nome)
+        self.__recompensa=float(recompensa)
+        self.poder=int(poder)
+        self.energia=int(energia)
         self.__status= status
 
     #Function to validate range to 0-100
@@ -29,58 +29,61 @@ class Tripulante():
     #Use getters, make private attributes
 
     @property
-    def name(self):
-        return self.__name
+    def nome(self):
+        return self.__nome
     
     @property
-    def bounty(self):
-        return self.__bounty
+    def recompensa(self):
+        return self.__recompensa
     
     @property
-    def power(self):
-        return self.__power
-    
-    #Use a setter to validate range 0-100
-    @power.setter
-    def power(self,value):
-        self.__power= self.__validate_range(value)
-
-    @property
-    def energy(self):
-        return self.__energy
+    def poder(self):
+        return self.__poder
     
     #Use a setter to validate range 0-100
-    @energy.setter
-    def energy(self,value):
-        self.__energy= self.__validate_range(value)
+    @poder.setter
+    def poder(self,value):
+        self.__poder= self.__validate_range(value)
 
-    #Function to read the state of the energy and change color
     @property
-    def energy_color(self):
-        energy= self.__energy
-        bar= energy //10
-        if 0<= self.__energy <=20:
-            return (f"{Back.RED}{' '*3}{Style.RESET_ALL}{Fore.RED} {energy} %{Style.RESET_ALL}")
-        elif  20< self.__energy <=50:
-            return (f"{Back.YELLOW}{" "*bar}{Style.RESET_ALL}{Fore.YELLOW} {energy} %{Style.RESET_ALL}")
+    def energia(self):
+        return self.__energia
+    
+    #Use a setter to validate range 0-100
+    @energia.setter
+    def energia(self,value):
+        self.__energia= self.__validate_range(value)
+
+    #Function to read the state of the energia and change color
+    @property
+    def energia_color(self):
+        energia= self.__energia
+        bar= int(energia) //10
+        if 0<= self.__energia <=20:
+            return (f"{Back.RED}{' '*3}{Style.RESET_ALL}{Fore.RED} {energia} %{Style.RESET_ALL}")
+        elif  20< self.__energia <=50:
+            return (f"{Back.YELLOW}{" "*bar}{Style.RESET_ALL}{Fore.YELLOW} {energia} %{Style.RESET_ALL}")
         else:
-            return (f"{Back.GREEN}{" "*bar}{Style.RESET_ALL}{Fore.GREEN} {energy} %{Style.RESET_ALL}")
+            return (f"{Back.GREEN}{" "*bar}{Style.RESET_ALL}{Fore.GREEN} {energia} %{Style.RESET_ALL}")
     
     @property
     def status(self):
         return self.__status
 
+    @status.setter
+    def status(self,value):
+        self.__status=value
 
     #String to show in console
     def __str__(self):
         return (
-    f"{self.random_colors()}«{self.__name} [{type(self).__name__}]\n"
-    f"{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}-Bounty:{Style.RESET_ALL}"
-    f"{self.random_colors()}{self.__bounty} M "
-    f"{Fore.LIGHTWHITE_EX}|Power: {Style.RESET_ALL}"
-    f"{self.random_colors()}{self.power} "
-    f"{Style.RESET_ALL}{Fore.LIGHTWHITE_EX}|Energy:"
-    f"{Style.RESET_ALL}{self.energy_color}  » "
+    f"{self.random_colors()}«{self.__nome} [{type(self).__name__}]\n"
+    f"{Style.RESET_ALL} {Fore.LIGHTWHITE_EX}-recompensa:{Style.RESET_ALL}"
+    f"{self.random_colors()}{self.__recompensa} M "
+    f"{Fore.LIGHTWHITE_EX}|poder: {Style.RESET_ALL}"
+    f"{self.random_colors()}{self.poder} "
+    f"{Style.RESET_ALL}{Fore.LIGHTWHITE_EX}|energia:"
+    f"{Style.RESET_ALL}{self.energia_color}  » "
                 )
 
     #Function to choose random colors
@@ -89,11 +92,11 @@ class Tripulante():
         return choice(colors)
     
     #Methods
-    def work(self,time):
-        self.energy -= time*5
+    def trabalhar(self,time):
+        self.energia -= time*5
 
-    def rest(self):
-        self.energy= 100
+    def descansar(self):
+        self.energia= 100
 
 
 
