@@ -1,10 +1,11 @@
 # Requirements 
 * Python 3.10+
-* "colorama" library----- TO INSTALL: pip install colorama
+* "colorama" library
+* TO INSTALL: pip install colorama (cmd.exe)
 
 # One Piece – Grand Line Adventures
 This project is a simulation game inspired by the One Piece universe.  
-It was developed as part of Practical Assignment 1 and focuses on Object**Oriented Programming concepts in Python.
+It was developed as part of Practical Assignment 1 and focuses on OOP concepts in Python.
 The goal of the game is to survive a series of random events while managing the crew, the ship's health, and the total treasure collected.
 
 # Features
@@ -22,6 +23,6 @@ The goal of the game is to survive a series of random events while managing the 
 * Polymorphism 
 
 # How to Run
-bash
-uv run tp1_p2_main.py or uv run python tp1_p2_main.py
+---bash (cmd.exe)
+uv run tp1_p2_main.py / uv run python tp1_p2_main.py
 
